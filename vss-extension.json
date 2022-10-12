@@ -1,68 +1,62 @@
 {
-    "manifestVersion": 1,
-    "id": "dsv-azure-pipelines-task",
-    "name": "Azure DevOps Delinea DevOps Secret vault plugin",
-    "version": "0.0.1",
-    "publisher": "DelineaXPM",
-    "targets": [
-        {
-            "id": "Microsoft.VisualStudio.Services"
-        }
-    ],
-    "description": "Azure DevOps Delinea DevOps Secret vault plugin for secure secrets retrieval in Azure Pipelines",
-    "categories": [
-        "Azure Pipelines"
-    ],
-    "icons": {
-        "default": "images/delinea-icon-devops-secrets-vault.png"
+  "manifestVersion": 1,
+  "id": "dsv-azure-pipelines-task",
+  "name": "Azure DevOps Delinea DevOps Secret vault plugin",
+  "version": "0.0.1",
+  "publisher": "DelineaXPM",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Azure DevOps Delinea DevOps Secret vault plugin for secure secrets retrieval in Azure Pipelines",
+  "categories": ["Azure Pipelines"],
+  "icons": {
+    "default": "images/delinea-icon-devops-secrets-vault.png"
+  },
+  "files": [
+    {
+      "path": "dsv"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "overview.md"
     },
-    "files": [
-        {
-            "path": "dsv"
-        }
-    ],
-	"content": {
-		"details": {
-			"path": "overview.md"
-		},
-		"license": {
-			"path": "LICENSE"
-		}
-	},
-    "links": {
-        "home": {
-            "uri": "https://delinea.com"
-        },
-        "learn": {
-            "uri": "https://delinea.com"
-        },
-        "support": {
-            "uri": "https://delinea.com/support/"
-        },
-        "repository": {
-            "uri": "https://github.com/DelineaXPM/dsv-azure-pipelines-task"
-        },
-        "issues": {
-            "uri": "https://github.com/DelineaXPM/dsv-azure-pipelines-task/issues"
-        }
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "links": {
+    "home": {
+      "uri": "https://delinea.com"
     },
-    "contributions": [
-        {
-            "id": "dsv-azure-pipelines-task",
-            "type": "ms.vss-distributed-task.task",
-            "targets": [
-                "ms.vss-distributed-task.tasks"
-            ],
-            "properties": {
-                "name": "dsv"
-            }
-        }
-    ],
+    "learn": {
+      "uri": "https://delinea.com"
+    },
+    "support": {
+      "uri": "https://delinea.com/support/"
+    },
     "repository": {
-        "type": "git",
-        "uri": "https://github.com/DelineaXPM/dsv-azure-pipelines-task"
+      "uri": "https://github.com/DelineaXPM/dsv-azure-pipelines-task"
     },
-    "galleryFlags": [
-        "Public"
-    ]
+    "issues": {
+      "uri": "https://github.com/DelineaXPM/dsv-azure-pipelines-task/issues"
+    }
+  },
+  "contributions": [
+    {
+      "id": "dsv-azure-pipelines-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "dsv"
+      }
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/DelineaXPM/dsv-azure-pipelines-task"
+  },
+  "galleryFlags": ["Public"]
 }

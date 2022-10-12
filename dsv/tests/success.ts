@@ -6,7 +6,7 @@ import path = require('path');
  * Create the following configuration with valid client id, secret
  * id, tenant and secret path.
  */
-const config = require("./success_config.json");
+const config = require('./success_config.json');
 
 let taskPath = path.join(__dirname, '..', 'index.js');
 let tmr: tmrm.TaskMockRunner = new tmrm.TaskMockRunner(taskPath);

@@ -6,7 +6,7 @@ import path = require('path');
  * Create the following configuration with an invalid client id, secret
  * id, tenant OR secret path.
  */
-const config = require("./failure_config.json");
+const config = require('./failure_config.json');
 
 let taskPath = path.join(__dirname, '..', 'index.js');
 let tmr: tmrm.TaskMockRunner = new tmrm.TaskMockRunner(taskPath);
