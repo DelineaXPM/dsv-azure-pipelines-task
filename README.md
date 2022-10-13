@@ -45,7 +45,7 @@ npm install
 Then to compile the task:
 
 ```bash
-dsv> tsc
+tsc
 ```
 
 ## Debugging
