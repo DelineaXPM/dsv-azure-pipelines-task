@@ -50,7 +50,7 @@ tsc
 
 ## Debugging
 
-Create a _launch.json_ in your **.vscode** directory:
+Update _launch.json_ in your **.vscode** directory:
 
 ```json
 {
