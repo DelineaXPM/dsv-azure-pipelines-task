@@ -39,13 +39,13 @@ The entry point for the task is _index.ts_ and most of the core code can be foun
 From the task directory **dsv**, first install the task dependencies:
 
 ```bash
-dsv> npm install
+npm install
 ```
 
 Then to compile the task:
 
 ```bash
-dsv> tsc
+tsc
 ```
 
 ## Debugging
@@ -113,7 +113,7 @@ Create a _failure_config.json_ in the **dsv/tests** directory:
 From the task directory **dsv**, run the following:
 
 ```bash
-dsv> mocha ./tests/_suite.js
+mocha ./tests/_suite.js
 ```
 
 # Packaging the extension
@@ -121,7 +121,7 @@ dsv> mocha ./tests/_suite.js
 Package the extension into a .vsix file using the following command from the repository root:
 
 ```bash
-> tfx extension create --manifest-globs vss-extension.json
+tfx extension create --manifest-globs vss-extension.json
 ```
 
 Note, the version in _vss-extension.json_ must match the one in _dsv/task.json_.
