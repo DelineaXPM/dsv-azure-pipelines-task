@@ -61,7 +61,7 @@ Update _launch.json_ in your **.vscode** directory:
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\dsv\\index.ts",
+      "program": "${workspaceFolder}/dsv/index.ts",
       "outFiles": ["${workspaceFolder}/**/*.js"],
       "env": {
         "INPUT_CLIENTID": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
