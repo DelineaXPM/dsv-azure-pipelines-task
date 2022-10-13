@@ -113,7 +113,7 @@ Create a _failure_config.json_ in the **dsv/tests** directory:
 From the task directory **dsv**, run the following:
 
 ```bash
-dsv> mocha ./tests/_suite.js
+mocha ./tests/_suite.js
 ```
 
 # Packaging the extension
