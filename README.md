@@ -121,7 +121,7 @@ mocha ./tests/_suite.js
 Package the extension into a .vsix file using the following command from the repository root:
 
 ```bash
-> tfx extension create --manifest-globs vss-extension.json
+tfx extension create --manifest-globs vss-extension.json
 ```
 
 Note, the version in _vss-extension.json_ must match the one in _dsv/task.json_.
