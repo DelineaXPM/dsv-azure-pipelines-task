@@ -39,7 +39,7 @@ The entry point for the task is _index.ts_ and most of the core code can be foun
 From the task directory **dsv**, first install the task dependencies:
 
 ```bash
-dsv> npm install
+npm install
 ```
 
 Then to compile the task:
