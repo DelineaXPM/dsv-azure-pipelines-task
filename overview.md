@@ -18,7 +18,7 @@ Using this approach requires an additional task in the pipeline to retrieve that
 
 ### Data Filter
 
-Using \* for the data filter will retrieve all data values in the secret.
+Using `*` for the data filter will retrieve all data values in the secret.
 A specific value (or multiple values separated by commas) can also be configured.
 
 ### Variable Prefix
