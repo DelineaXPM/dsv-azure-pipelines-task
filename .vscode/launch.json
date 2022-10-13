@@ -1,21 +1,21 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch Program",
-        "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}\\dsv\\index.ts",
-        "outFiles": ["${workspaceFolder}/**/*.js"],
-        "env": {
-          "INPUT_CLIENTID": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
-          "INPUT_CLIENTSECRET": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx",
-          "INPUT_SERVERURL": "https://mytenent.secretsvaultcloud.com/v1/",
-          "INPUT_SECRETPATH": "/valid/secret",
-          "INPUT_DATAFILTER": "*",
-          "INPUT_VARIABLEPREFIX": "DSV_"
-        }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\dsv\\index.ts",
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "env": {
+        "INPUT_CLIENTID": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
+        "INPUT_CLIENTSECRET": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx",
+        "INPUT_SERVERURL": "https://mytenent.secretsvaultcloud.com/v1/",
+        "INPUT_SECRETPATH": "/valid/secret",
+        "INPUT_DATAFILTER": "*",
+        "INPUT_VARIABLEPREFIX": "DSV_"
       }
-    ]
-  }
+    }
+  ]
+}
