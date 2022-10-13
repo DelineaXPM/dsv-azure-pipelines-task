@@ -1,14 +1,15 @@
-# Repo
+# Azure DevOps Delinea DevOps Secret vault plugin for secure secrets retrieval in Azure Pipelines
 
-> **_Warning_**
-> Run `find . -type f -name '*.go' -exec sed -i -e 's,github.com/DelineaXPM/dsv-repo-template,github.com/DelineaXPM/MYNEWNAME,g' {} \;` to replace the prior url with the correct one, then run `go mod tidy` to fix.
-
-👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻👉🏻 Do a search and replace for any `dsv-repo-template` existing.
+This repository contains the code for an Azure DevOps pipeline task which is used to read secrets from Delinea DevOps Secrets Vault.
 
 ## Getting Started
 
 - [Developer](DEVELOPER.md): instructions on running tests, local tooling, and other resources.
 - [DSV Documentation](https://docs.delinea.com/dsv/current?ref=githubrepo)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Node.js](https://nodejs.org)
+- [TypeScript Compiler](https://www.npmjs.com/package/typescript)
+- CLI for Azure DevOps (tfx-cli) to package the extension. You can install _tfx-cli_ by running _npm i -g tfx-cli_.
 
 ## Setup
 
@@ -28,4 +29,99 @@ This will be merged into the final changelog and trigger a release when it's nee
 
 Focus on summarizing the end result, as `git log` covers the incremental details.
 
-## How This Works
+## General
+
+The task code can be found in the **dsv** directory.
+The entry point for the task is _index.ts_ and most of the core code can be found in _operations/Vault.ts_.
+
+## Compiling
+
+From the task directory **dsv**, first install the task dependencies:
+
+```bash
+npm install
+```
+
+Then to compile the task:
+
+```bash
+tsc
+```
+
+## Debugging
+
+Update _launch.json_ in your **.vscode** directory:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/dsv/index.ts",
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "env": {
+        "INPUT_CLIENTID": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
+        "INPUT_CLIENTSECRET": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx",
+        "INPUT_SERVERURL": "https://mytenent.secretsvaultcloud.com/v1/",
+        "INPUT_SECRETPATH": "/valid/secret",
+        "INPUT_DATAFILTER": "*",
+        "INPUT_VARIABLEPREFIX": "DSV_"
+      }
+    }
+  ]
+}
+```
+
+From the 'Run' menu, select 'Start Debugging' OR F5.
+
+## Unit Tests
+
+Create a _success_config.json_ in the **dsv/tests** directory:
+
+```json
+{
+  "credentials": {
+    "clientId": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
+    "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx"
+  },
+  "serverUrl": "https://mytenant.secretsvaultcloud.com/v1/",
+  "secretPath": "/valid/secret",
+  "dataFilter": "*",
+  "variablePrefix": "DSV_"
+}
+```
+
+Create a _failure_config.json_ in the **dsv/tests** directory:
+
+```json
+{
+  "credentials": {
+    "clientId": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
+    "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx"
+  },
+  "serverUrl": "https://mytenant.secretsvaultcloud.com/v1/",
+  "secretPath": "/invalid/secret",
+  "dataFilter": "*",
+  "variablePrefix": "DSV_"
+}
+```
+
+From the task directory **dsv**, run the following:
+
+```bash
+mocha ./tests/_suite.js
+```
+
+# Packaging the extension
+
+Package the extension into a .vsix file using the following command from the repository root:
+
+```bash
+tfx extension create --manifest-globs vss-extension.json
+```
+
+Note, the version in _vss-extension.json_ must match the one in _dsv/task.json_.
