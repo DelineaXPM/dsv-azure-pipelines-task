@@ -16,8 +16,6 @@ import (
 
 	// mage:import
 	"github.com/sheldonhull/magetools/gotools"
-	//mage:import
-	_ "github.com/sheldonhull/magetools/secrets"
 )
 
 // Test contains mage tasks for testing.
@@ -64,7 +62,7 @@ func Init() error { //nolint:deadcode // Not dead, it's alive.
 		}
 		installArgs = append(installArgs, "install")
 		installArgs = append(installArgs, "aqua")
-		if err := sh.RunWithV(map[string]string{"AQUA_CONFIG": "aqua.ci.yaml"}, "aqua", installArgs...); err != nil {
+		if err := sh.RunV("aqua", installArgs...); err != nil {
 			pterm.Error.Printfln("aqua-ci%v", err)
 			return err
 		}
