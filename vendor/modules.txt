@@ -47,13 +47,12 @@ github.com/pterm/pterm/internal
 # github.com/rivo/uniseg v0.4.2
 ## explicit; go 1.18
 github.com/rivo/uniseg
-# github.com/sheldonhull/magetools v0.0.12
+# github.com/sheldonhull/magetools v1.0.0
 ## explicit; go 1.18
 github.com/sheldonhull/magetools/ci
 github.com/sheldonhull/magetools/gotools
 github.com/sheldonhull/magetools/pkg/magetoolsutils
 github.com/sheldonhull/magetools/pkg/req
-github.com/sheldonhull/magetools/secrets
 github.com/sheldonhull/magetools/tooling
 # github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e
 ## explicit; go 1.19
@@ -61,22 +60,22 @@ github.com/xo/terminfo
 # github.com/ztrue/tracerr v0.3.0
 ## explicit
 github.com/ztrue/tracerr
-# golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3
+# golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4
 ## explicit; go 1.17
 golang.org/x/mod/internal/lazyregexp
 golang.org/x/mod/modfile
 golang.org/x/mod/module
 golang.org/x/mod/semver
-# golang.org/x/sys v0.0.0-20221006211917-84dc82d7e875
+# golang.org/x/sys v0.1.0
 ## explicit; go 1.17
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/term v0.0.0-20220919170432-7a66f970e087
+# golang.org/x/term v0.1.0
 ## explicit; go 1.17
 golang.org/x/term
-# golang.org/x/text v0.3.7
+# golang.org/x/text v0.4.0
 ## explicit; go 1.17
 golang.org/x/text/cases
 golang.org/x/text/internal
@@ -87,7 +86,3 @@ golang.org/x/text/language
 golang.org/x/text/runes
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
-# golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2
-## explicit; go 1.17
-golang.org/x/xerrors
-golang.org/x/xerrors/internal

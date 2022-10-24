@@ -10,11 +10,10 @@ actions:
   definitions:
     - id: go-mod-vendor
       description: When go mod or sum is updated, go vendoring should be run to ensure it's consistent.
-      # runtime: go
-      run: .trunk/go-mod-tidy-vendor.sh
+      runtime: go
+      run: mod vendor
       triggers:
-        # - git_hooks: [commit-msg]
-        - files: [go.mod, go.sum]
+        - files: [go.mod]
 runtimes:
   enabled:
     - go@1.18.3
@@ -24,9 +23,9 @@ lint:
   enabled:
     - actionlint@1.6.21
     - git-diff-check
-    - gitleaks@8.14.0
+    - gitleaks@8.15.0
     - gofmt@1.16.7
-    - golangci-lint@1.50.0
+    - golangci-lint@1.50.1
     - hadolint@2.10.0
     - markdownlint@0.32.2
     - prettier@2.7.1
@@ -51,7 +50,7 @@ lint:
         - .changes/unreleased/*.yaml
 
 cli:
-  version: 0.18.1-beta
+  version: 1.0.1
 plugins:
   sources:
     - id: trunk
