@@ -37,6 +37,7 @@ func createDirectories() error {
 
 // Init runs multiple tasks to initialize all the requirements for running a project for a new contributor.
 func Init() error { //nolint:deadcode // Not dead, it's alive.
+	magetoolsutils.CheckPtermDebug()
 	pterm.DefaultHeader.Println("running Init()")
 	mg.SerialDeps(
 		Clean,
@@ -104,24 +105,4 @@ func InstallTrunk() error {
 	}
 
 	return nil
-}
-
-// InstallSyft installs SBOM tooling for goreleaser.
-func InstallSyft() error {
-	_, err := script.Exec("curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh").Exec("sh -s -- -b /usr/local/bin").Stdout()
-	if err != nil {
-		return err
-	}
-	return nil
-}
-
-// Unit runs go unit tests.
-func (Test) Unit() {
-	mg.Deps(gotools.Go{}.TestSum("./..."))
-}
-
-// VulnCheck runs Go's vulncheck tool to scan dependencies.
-func VulnCheck() error {
-	magetoolsutils.CheckPtermDebug()
-	return sh.RunV("govulncheck", "./...")
 }
