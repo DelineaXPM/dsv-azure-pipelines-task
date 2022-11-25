@@ -15,9 +15,9 @@ describe('DSV task tests', function () {
 
     tr.run();
     console.log(tr.succeeded);
-    assert.equal(tr.succeeded, true, 'should have succeeded');
-    assert.equal(tr.warningIssues.length, 0, 'should have no warnings');
-    assert.equal(tr.errorIssues.length, 0, 'should have no errors');
+    assert.strictEqual(tr.succeeded, true, 'should have succeeded');
+    assert.strictEqual(tr.warningIssues.length, 0, 'should have no warnings');
+    assert.strictEqual(tr.errorIssues.length, 0, 'should have no errors');
     console.log(tr.stdout);
     done();
   });
@@ -30,9 +30,9 @@ describe('DSV task tests', function () {
 
     tr.run();
     console.log(tr.succeeded);
-    assert.equal(tr.succeeded, false, 'should have failed');
-    assert.equal(tr.warningIssues, 0, 'should have no warnings');
-    assert.equal(tr.errorIssues.length, 1, 'should have 1 error issue');
+    assert.strictEqual(tr.succeeded, false, 'should have failed');
+    assert.strictEqual(tr.warningIssues, 0, 'should have no warnings');
+    assert.strictEqual(tr.errorIssues.length, 1, 'should have 1 error issue');
     done();
   });
 });
