@@ -1,15 +1,15 @@
 {
   "manifestVersion": 1,
-  "id": "dsv-azure-pipelines-task",
-  "name": "Azure DevOps Delinea DevOps Secret vault plugin",
+  "id": "delinea-dsv-task",
+  "name": "Delinea DSV Azure DevOps Task",
   "version": "0.0.1",
-  "publisher": "DelineaXPM",
+  "publisher": "Delinea",
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
-  "description": "Azure DevOps Delinea DevOps Secret vault plugin for secure secrets retrieval in Azure Pipelines",
+  "description": "Azure DevOps task for accessing secrets from Delinea DSV",
   "categories": ["Azure Pipelines"],
   "icons": {
     "default": "images/delinea-icon-devops-secrets-vault.png"
