@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
   "id": "c2dc3463-8548-4e6c-83c0-1d0f9bc4d685",
-  "name": "DelinaDSV",
-  "friendlyName": "Delina DSV",
+  "name": "DelineaDSV",
+  "friendlyName": "Delinea DSV",
   "description": "Retrieves secrets from Delinea DevOps Secrets Vault",
   "helpUrl": "https://github.com/DelineaXPM/dsv-azure-pipelines-task",
   "helpMarkDown": "[Learn more about this task](https://github.com/DelineaXPM/dsv-azure-pipelines-task)",
