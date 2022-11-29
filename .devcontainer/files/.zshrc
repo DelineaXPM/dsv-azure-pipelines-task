@@ -6,6 +6,19 @@ ZSH_THEME=avit
 plugins=(z direnv zsh-interactive-cd docker golang gh zsh-navigation-tools)
 source "$ZSH/oh-my-zsh.sh"
 
+if ! command -v fnm &>/dev/null; then
+  echo "ℹ️ fnm command not detected, might need to install fnm"
+else
+  fnm install --lts
+  fnm use --install-if-missing
+fi
+
+
+if command -v fnm &>/dev/null; then
+  eval "$(fnm env --use-on-cd)"
+else
+  echo "❌ failed to find fnm"
+fi
 
 
 # Display optional first run image specific notice if configured and terminal is interactive
