@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "azure-pipelines-task-lib": "4.0.2",
+    "azure-pipelines-task-lib": "4.1.0",
     "tfx-cli": "0.12.0",
     "typed-rest-client": "1.8.9",
     "typescript": "4.9.3"
