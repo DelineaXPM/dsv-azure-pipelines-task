@@ -1,5 +1,119 @@
 # Developer
 
+This document describes how to set up your development environment to build and test Delinea DSV Azure DevOps Task.
+
+## Project structure
+
+The source code for the task can be found in the **dsv** directory. The entry point for the task is in [index.ts][f1]
+and most of the core code can be found in [operations/Vault.ts][f2].
+
+## Local development
+
+Install [Node.js][1] 18.x (LTS) either manually or using a tool like [fnm][3] (recommended).
+
+Clone this repository. Then open the **dsv** directory in your terminal and install dependencies:
+
+```bash
+npm install
+```
+
+Run the [TypeScript][2] compiler to compile the task:
+
+```bash
+npx tsc
+```
+
+## Changelog
+
+Releases are driven from the changelog, which should be updated via `changie` as part of any PR.
+This will be merged into the final changelog and trigger a release when it's needed.
+
+Focus on summarizing the end result, as `git log` covers the incremental details.
+
+## Run the tests
+
+Create a _success_config.json_ in the **dsv/tests** directory:
+
+```json
+{
+  "credentials": {
+    "clientId": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
+    "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx"
+  },
+  "serverUrl": "https://mytenant.secretsvaultcloud.com/v1/",
+  "secretPath": "valid:secret",
+  "dataFilter": "*",
+  "variablePrefix": "DSV_"
+}
+```
+
+Create a _failure_config.json_ in the **dsv/tests** directory:
+
+```json
+{
+  "credentials": {
+    "clientId": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
+    "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx"
+  },
+  "serverUrl": "https://mytenant.secretsvaultcloud.com/v1/",
+  "secretPath": "invalid:secret",
+  "dataFilter": "*",
+  "variablePrefix": "DSV_"
+}
+```
+
+From the task directory **dsv**, run the following:
+
+```bash
+npm test
+```
+
+## Debugging in VS Code
+
+- [Visual Studio Code][4]
+
+Update _launch.json_ in your **.vscode** directory:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/dsv/index.ts",
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "env": {
+        "INPUT_CLIENTID": "93d866d4-635f-4d4e-9ce3-0ef7f879f319",
+        "INPUT_CLIENTSECRET": "xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxx-xxxxx",
+        "INPUT_SERVERURL": "https://mytenent.secretsvaultcloud.com/v1/",
+        "INPUT_SECRETPATH": "valid:secret",
+        "INPUT_DATAFILTER": "*",
+        "INPUT_VARIABLEPREFIX": "DSV_"
+      }
+    }
+  ]
+}
+```
+
+From the 'Run' menu, select 'Start Debugging' OR F5.
+
+## Packaging the extension
+
+- CLI for Azure DevOps (tfx-cli) to package the extension. You can install _tfx-cli_ by running _npm i -g tfx-cli_.
+
+Package the extension into a .vsix file using the following command from the repository root:
+
+```bash
+tfx extension create --manifest-globs vss-extension.json
+```
+
+Note, the version in _vss-extension.json_ must match the one in _dsv/task.json_.
+
+## Devcontainer
+
 - Devcontainer configuration included for Codespaces or [Remote Container](https://code.visualstudio.com/docs/remote/containers)
 
 ## Run Tasks
@@ -65,3 +179,10 @@ If the port forward isn't discovered automatically, enable it yourself, by using
       Example: `https://127.0.0.1:9999`
 
 You can choose the external port to access, or even click on it in the tab and it will open in your host for you.
+
+[f1]: dsv/index.ts
+[f2]: dsv/operations/Vault.ts
+[1]: https://nodejs.org
+[2]: https://www.typescriptlang.org/
+[3]: https://github.com/Schniz/fnm
+[4]: https://code.visualstudio.com/
