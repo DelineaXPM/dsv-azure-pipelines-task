@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/DelineaXPM/dsv-repo-template/magefiles/constants"
+	"github.com/DelineaXPM/dsv-azure-pipelines-task/magefiles/constants"
 
 	"github.com/bitfield/script"
 	"github.com/magefile/mage/mg"

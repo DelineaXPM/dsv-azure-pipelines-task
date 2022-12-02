@@ -30,7 +30,7 @@ Update [CHANGELOG.md](CHANGELOG.md) by running `changie merge` which will rebuil
 
 - Run `trunk fmt --all; trunk check --all` to finalize run through.
 - Push changelog via PR or direct if you have permissions and this will trigger the [release-composite](.github/workflows/release-composite.yml). If any issues, retrigger manually via `gh workflow run release-composite`.
-- Release should be published in the [releases](https://github.com/DelineaXPM/dsv-repo-template/releases)
+- Release should be published in the [releases](https://github.com/DelineaXPM/dsv-azure-pipelines-task/releases)
 - Edit the release and click "update release" to ensure it publishes to the marketplace. Unfortunately, creating a release doesn't trigger the marketplace release without doing this step. While this can be automated through other actions, I've opted due to time constraints to leave that last step as a manual one.
 
 ## FAQ
