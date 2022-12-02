@@ -9,6 +9,17 @@ and most of the core code can be found in [operations/Vault.ts][f2].
 
 ## Local development
 
+This project leverages capabilities of [the aqua project][aqua1] to manage CLI tools. You can follow
+the official installation instructions described [here][aqua2] to install the `aqua` command-line tool.
+
+To install tools needed for development run:
+
+```bash
+aqua install
+```
+
+See [aqua.yaml][f3] for the full list of tools used in the project.
+
 Install [Node.js][1] 18.x (LTS) either manually or using a tool like [fnm][3] (recommended).
 
 Clone this repository. Then open the **dsv** directory in your terminal and install dependencies:
@@ -182,6 +193,9 @@ You can choose the external port to access, or even click on it in the tab and i
 
 [f1]: dsv/index.ts
 [f2]: dsv/operations/Vault.ts
+[f3]: aqua.yaml
+[aqua1]: https://aquaproj.github.io/
+[aqua2]: https://aquaproj.github.io/docs/reference/install
 [1]: https://nodejs.org
 [2]: https://www.typescriptlang.org/
 [3]: https://github.com/Schniz/fnm
