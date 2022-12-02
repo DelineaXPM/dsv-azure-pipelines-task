@@ -1,4 +1,4 @@
-module github.com/DelineaXPM/dsv-repo-template
+module github.com/DelineaXPM/dsv-azure-pipelines-task
 
 go 1.18
 
