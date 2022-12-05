@@ -1,4 +1,4 @@
-# Azure DevOps Delinea DevOps Secret vault plugin for secure secrets retrieval in Azure Pipelines
+# Delinea DSV Task for Azure DevOps
 
 The task in this extension allows the retrieval of secrets for use in both Build and Release pipelines in Azure DevOps.
 The task sets environment variables for the requested data keys with variable names based on the key names with an optional configured prefix.
