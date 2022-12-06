@@ -2,6 +2,15 @@
 
 This document describes how to set up your development environment to build and test Delinea DSV Azure DevOps Task.
 
+Reading the official page ["Add a custom pipelines task extension"][add-build-task] is recommended before you start.
+
+- [Project structure](#project-structure)
+- [Local development](#local-development)
+- [Changelog](#changelog)
+- [Testing](#testing)
+- [Debugging in VS Code](#debugging-in-vs-code)
+- [Packaging the extension](#packaging-the-extension)
+
 ## Project structure
 
 The source code for the task can be found in the **dsv** directory. The entry point for the task is in [index.ts][f1]
@@ -41,7 +50,7 @@ This will be merged into the final changelog and trigger a release when it's nee
 
 Focus on summarizing the end result, as `git log` covers the incremental details.
 
-## Run the tests
+## Testing
 
 Create a _success_config.json_ in the **dsv/tests** directory:
 
@@ -113,15 +122,39 @@ From the 'Run' menu, select 'Start Debugging' OR F5.
 
 ## Packaging the extension
 
-- CLI for Azure DevOps (tfx-cli) to package the extension. You can install _tfx-cli_ by running _npm i -g tfx-cli_.
+Make sure that the version in _vss-extension.json_ matches the one in _dsv/task.json_.
 
-Package the extension into a .vsix file using the following command from the repository root:
+The [tfx-cli][5] tool is used to package the extension.
+
+Open the **dsv** directory in your terminal and install dependencies:
+
+```bash
+npm install
+```
+
+Run the [TypeScript][2] compiler to compile the task:
+
+```bash
+npx tsc
+```
+
+Remove the packages specified in the devDependencies list from the _node_modules_ directory:
+
+```bash
+npm prune --production
+```
+
+Go back to root directory of this repository and install _tfx-cli_:
+
+```bash
+npm install --global tfx-cli
+```
+
+Package the extension into a _.vsix_ file:
 
 ```bash
 tfx extension create --manifest-globs vss-extension.json
 ```
-
-Note, the version in _vss-extension.json_ must match the one in _dsv/task.json_.
 
 ## Devcontainer
 
@@ -196,7 +229,9 @@ You can choose the external port to access, or even click on it in the tab and i
 [f3]: aqua.yaml
 [aqua1]: https://aquaproj.github.io/
 [aqua2]: https://aquaproj.github.io/docs/reference/install
+[add-build-task]: https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-build-task
 [1]: https://nodejs.org
 [2]: https://www.typescriptlang.org/
 [3]: https://github.com/Schniz/fnm
 [4]: https://code.visualstudio.com/
+[5]: https://github.com/microsoft/tfs-cli
