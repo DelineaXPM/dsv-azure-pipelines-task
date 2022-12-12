@@ -1,5 +1,7 @@
 # The Delinea DSV Azure DevOps Task
 
+[View in the Marketplace](https://marketplace.visualstudio.com/items?itemName=Delinea.delinea-dsv-task)
+
 This repository contains the code for an Azure DevOps pipeline task which is used to read secrets from Delinea DevOps Secrets Vault.
 
 - [Task overview](overview.md)
