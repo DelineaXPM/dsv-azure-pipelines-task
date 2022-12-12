@@ -17,6 +17,9 @@
   "files": [
     {
       "path": "dsv"
+    },
+    {
+      "path": "images/task-config.png"
     }
   ],
   "content": {
