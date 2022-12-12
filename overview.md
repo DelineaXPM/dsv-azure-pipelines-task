@@ -26,4 +26,19 @@ A specific value (or multiple values separated by commas) can also be configured
 Environment variable names are constructed using the configured variable prefix and the data key.
 For example, with a variable prefix of `DSV_`, the secret data with key `xyz` will result in an environment variable with name `DSV_xyz`.
 
-![Azure DevOps Delinea DevOps Secret vault plugin сonfiguration](/images/task-config.png)
+YAML-based pipeline:
+
+```yaml
+- task: DelineaDSV@0
+  displayName: "Read the 'ado-task:pr-validation' secret from DSV"
+  inputs:
+    ServerUrl: 'https://example.secretsvaultcloud.com/v1/'
+    ClientId: $(dsv-client-id)
+    ClientSecret: $(dsv-client-secret)
+    SecretPath: 'ado-task:pr-validation'
+    DataFilter: '*'
+    VariablePrefix: 'DSV_'
+```
+
+Classic pipeline example:
+![DSV task сonfiguration](/images/task-config.png)
