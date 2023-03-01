@@ -26,7 +26,7 @@ A specific value (or multiple values separated by commas) can also be configured
 Environment variable names are constructed using the configured variable prefix and the data key.
 For example, with a variable prefix of `DSV_`, the secret data with key `xyz` will result in an environment variable with name `DSV_xyz`.
 
-YAML-based pipeline:
+### YAML-based pipeline
 
 ```yaml
 - task: DelineaDSV@0
@@ -40,5 +40,6 @@ YAML-based pipeline:
     VariablePrefix: 'DSV_'
 ```
 
-Classic pipeline example:
-![DSV task сonfiguration](/images/task-config.png)
+### Classic pipeline example
+
+![DSV task сonfiguration](images/task-config.png)
