@@ -3,7 +3,12 @@
   "extends": [
     "DelineaXPM/renovate-config"
   ],
-  "enabled": false,
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "enabled": false
+    }
+  ],
   "vulnerabilityAlerts": {
     "enabled": true,
     "semanticCommitType": "security",
