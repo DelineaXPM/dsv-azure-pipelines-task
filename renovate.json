@@ -1,7 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "DelineaXPM/renovate-config",
+    "config:base",
+    ":dependencyDashboard",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":ignoreModulesAndTests",
+    "replacements:all",
+    "workarounds:all",
+    ":semanticCommitTypeAll(chore)",
+    "github>whitesource/merge-confidence:beta",
+    "github>aquaproj/aqua-renovate-config#1.2.6",
+    "helpers:pinGitHubActionDigests",
+    "regexManagers:githubActionsVersions",
+    "regexManagers:dockerfileVersions",
+    ":enableVulnerabilityAlerts",
+    "group:linters",
     "schedule:weekdays"
   ],
   "packageRules": [
@@ -19,5 +32,6 @@
     "dependencyDashboardApproval": false,
     "schedule": []
   },
-  "recreateClosed": true
+  "recreateClosed": true,
+  "dependencyDashboardAutoclose": true
 }
