@@ -10,10 +10,13 @@
       "enabled": false
     }
   ],
+  "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
     "enabled": true,
-    "semanticCommitType": "security",
-    "prCreation": "immediate"
-  },
-  "osvVulnerabilityAlerts": true
+    "prCreation": "immediate",
+    "labels": ["security"],
+    "minimumReleaseAge": null,
+    "dependencyDashboardApproval": false,
+    "schedule": []
+  }
 }
