@@ -19,5 +19,5 @@
     "dependencyDashboardApproval": false,
     "schedule": []
   },
-  "recreateClosed": "always"
+  "recreateClosed": true
 }
