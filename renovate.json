@@ -13,5 +13,11 @@
     "enabled": true,
     "semanticCommitType": "security",
     "prCreation": "immediate"
-  }
+  },
+  "osvVulnerabilityAlerts": true,
+  "dependencyDashboard": true,
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "dependencyDashboardAutoclose": true
 }
