@@ -30,14 +30,26 @@ footerFormat: |
   {{ end }}
   {{ end }}
 kinds:
-  - label: 🎉 Feature
-  - label: 🔨 Refactor
+  - label: 🤖 CI & Build
+    auto: patch
+  - label: 🎉 New Product Feature
+    auto: minor
   - label: ⬇️ Deprecated
+    auto: minor
+  - label: 🧪 Tests
+    auto: patch
+  - label: 🔨 Refactor
+    auto: patch
   - label: 🐛 Bug Fix
+    auto: patch
   - label: 🔥 Breaking Change
+    auto: minor
   - label: 🔒 Security
+    auto: patch
   - label: ⬆️ Dependencies
-  - label: 🤖 Development
+    auto: patch
+  - label: 🔥 Major Version Change (Breaking Changes)
+    auto: major
 newlines:
   afterChange: 0
   afterChangelogHeader: 1
