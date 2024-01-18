@@ -30,14 +30,26 @@ footerFormat: |
   {{ end }}
   {{ end }}
 kinds:
-  - label: 🎉 Feature
-  - label: 🔨 Refactor
+  - label: 🤖 CI & Build
+    auto: patch
+  - label: 🎉 New Product Feature
+    auto: minor
   - label: ⬇️ Deprecated
+    auto: minor
+  - label: 🧪 Tests
+    auto: patch
+  - label: 🔨 Refactor
+    auto: patch
   - label: 🐛 Bug Fix
+    auto: patch
   - label: 🔥 Breaking Change
+    auto: minor
   - label: 🔒 Security
+    auto: patch
   - label: ⬆️ Dependencies
-  - label: 🤖 Development
+    auto: patch
+  - label: 🔥 Major Version Change (Breaking Changes)
+    auto: major
 newlines:
   afterChange: 0
   afterChangelogHeader: 1
@@ -81,3 +93,17 @@ custom:
     type: int
     minLength: 6
     optional: true
+replacements:
+  # chart versions align with the release and get bumped by changie for us on `changie merge`.
+  - path: 'dsv/package.json'
+    find: '  "version": ".*",'
+    replace: '  "version": "{{.VersionNoPrefix}}",'
+  - path: dsv/task.json
+    find: '    "Major": .*,'
+    replace: '    "Major": {{.Major}},'
+  - path: dsv/task.json
+    find: '    "Minor": .*,'
+    replace: '    "Minor": {{.Minor}},'
+  - path: dsv/task.json
+    find: '    "Patch": .*'
+    replace: '    "Patch": {{.Patch}}'
