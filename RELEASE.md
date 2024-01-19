@@ -1,5 +1,7 @@
 # Release
 
+Read how to release extensions for Azure DevOps [here](https://learn.microsoft.com/en-us/azure/devops/extend/publish/overview).
+
 ## First Time Setup
 
 - Run `mage init` to install tooling.
