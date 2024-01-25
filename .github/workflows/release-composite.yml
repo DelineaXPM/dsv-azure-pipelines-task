@@ -2,8 +2,6 @@
 name: release-composite
 on:
   push:
-    #   tags:
-    #     - 'v*'
     branches: [main]
     paths: [CHANGELOG.md] # your changelog file if different
   workflow_dispatch:
