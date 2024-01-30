@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "delinea-dsv-task",
   "name": "Delinea DSV Azure DevOps Task",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "Delinea",
   "targets": [
     {
@@ -19,7 +19,8 @@
       "path": "dsv"
     },
     {
-      "path": "images/task-config.png"
+      "path": "images/task-config.png",
+      "addressable": true
     }
   ],
   "content": {
