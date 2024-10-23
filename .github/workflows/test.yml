@@ -25,13 +25,13 @@ jobs:
           go-version-file: go.mod
 
       - name: mage-tidy
-        uses: magefile/mage-action@3b833fb24c0d19eed3aa760b9eb285b4b84f420f # v2
+        uses: magefile/mage-action@a3d5bb52942181c125118a2be4b4664c3337aef6 # v2
         with:
           version: latest
           args: go:tidy
 
       - name: mage-test
-        uses: magefile/mage-action@3b833fb24c0d19eed3aa760b9eb285b4b84f420f # v2
+        uses: magefile/mage-action@a3d5bb52942181c125118a2be4b4664c3337aef6 # v2
         with:
           version: latest
           args: go:testsum ./...
