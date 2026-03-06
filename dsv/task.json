@@ -11,7 +11,7 @@
   "version": {
     "Major": 0,
     "Minor": 0,
-    "Patch": 3
+    "Patch": 4
   },
   "instanceNameFormat": "Retrieve $(SecretPath) from Delinea DevOps Secrets Vault",
   "inputs": [
@@ -76,10 +76,13 @@
     }
   ],
   "execution": {
-    "Node10": {
+    "Node16": {
       "target": "index.js"
     },
-    "Node16": {
+    "Node20_1": {
+      "target": "index.js"
+    },
+    "Node24": {
       "target": "index.js"
     }
   }

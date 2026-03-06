@@ -77,8 +77,9 @@ async function run() {
 
     tl.setResult(tl.TaskResult.Succeeded, '');
   } catch (err) {
-    console.log(err.message);
-    tl.setResult(tl.TaskResult.Failed, err.message);
+    const message = err instanceof Error ? err.message : String(err);
+    console.log(message);
+    tl.setResult(tl.TaskResult.Failed, message);
   }
 }
 
