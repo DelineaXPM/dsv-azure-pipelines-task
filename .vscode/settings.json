@@ -23,8 +23,8 @@
   "go.toolsManagement.autoUpdate": true,
   "go.useLanguageServer": true,
   "gopls": {
-    "buildFlags": [
-      "-tags=mage tools integration" // required for gopls to autocomplete mage files with mage tag
+    "build.buildFlags": [
+      "-tags=mage,tools,integration" // required for gopls to autocomplete mage files with mage tag
     ],
     "build.expandWorkspaceToModule": true
   }
