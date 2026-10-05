@@ -1,0 +1,6 @@
+kind: 🔒 Security
+body: Bump azure-pipelines-task-lib to 5.281.0, which removes the vulnerable adm-zip dependency.
+time: 2026-10-05T08:30:00.000000-07:00
+custom:
+  azure-boards-workitemid-fixed: '768449'
+  github-link: https://github.com/DelineaXPM/dsv-azure-pipelines-task/pull/68

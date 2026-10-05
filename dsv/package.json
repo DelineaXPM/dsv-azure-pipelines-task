@@ -12,7 +12,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "azure-pipelines-task-lib": "^5.2.8",
+    "azure-pipelines-task-lib": "^5.281.0",
     "typed-rest-client": "^2.3.0"
   },
   "devDependencies": {

@@ -16,8 +16,8 @@ actions:
         - files: [go.mod]
 runtimes:
   enabled:
-    - go@1.21.6
-    - node@20.11.0
+    - go@1.26.8
+    - node@22.16.0
     - python@3.10.8
 lint:
   enabled:
@@ -26,13 +26,13 @@ lint:
     - oxipng@9.0.0
     - renovate@37.134.0
     - terrascan@1.18.11
-    - trivy@0.48.3
+    - trivy@0.74.0
     - trufflehog@3.63.9
     - actionlint@1.6.26
     - git-diff-check
     - gitleaks@8.18.1
     - gofmt@1.20.4
-    - golangci-lint@1.55.2
+    - golangci-lint@1.64.8
     - hadolint@2.12.0
     - markdownlint@0.38.0
     - prettier@3.2.2
@@ -55,11 +55,15 @@ lint:
     - linters: [yamllint]
       paths:
         - .changes/unreleased/*.yaml
+    - linters: [checkov, trufflehog, trivy]
+      paths:
+        - .changes/**
+        - .trunk/**
 
 cli:
-  version: 1.19.0
+  version: 1.22.2
 plugins:
   sources:
     - id: trunk
-      ref: v1.2.1
+      ref: v1.6.1
       uri: https://github.com/trunk-io/plugins
