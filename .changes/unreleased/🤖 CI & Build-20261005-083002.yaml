@@ -1,0 +1,3 @@
+kind: 🤖 CI & Build
+body: Repair the lint workflow by granting the permissions the shared workflow needs, and update Trunk's Go runtime, golangci-lint and trivy pins.
+time: 2026-10-05T08:30:02.000000-07:00
