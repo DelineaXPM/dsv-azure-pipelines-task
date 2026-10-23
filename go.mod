@@ -2,6 +2,8 @@ module github.com/DelineaXPM/dsv-azure-pipelines-task
 
 go 1.26.2
 
+toolchain go1.26.10
+
 require (
 	github.com/bitfield/script v0.24.1
 	github.com/magefile/mage v1.17.1
